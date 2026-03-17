@@ -1,13 +1,44 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>projektuppgift</title>
+    <title>Ridvägar & väder</title>
+
+    <!-- Leaflet CSS för kartan -->
+     <linkrel="stylesheet"
+     href="https://unpkg.com/leaflet/dist/leaflet.css"
+     />
+
+     <!-- Vite-bundlad CSS -->
+      <script type="module" crossorigin src="/src/main.js"></script>
   </head>
+
   <body>
-    <div id="app"></div>
+
+    <div class="container app">
+      <!-- Sökformulär -->
+       <form id="searchForm">
+        <input id="searchInput" type="text" placeholder="Sök plats..." />
+        <button type="submit">Sök</button>
+       </form>
+
+       <!-- Resultat: Väder och ridtips -->
+        <div class="results">
+          <div id="weather" class="card"></div>
+          <div id="advice" class="card"></div>
+        </div>
+
+        <!-- Karta -->
+         <div id="map"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+     <script
+     src="https://unpkg.com/leaflet/dist/leaflet.js"
+     defer
+     ></script>
+    
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
