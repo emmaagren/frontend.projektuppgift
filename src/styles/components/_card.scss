@@ -1,0 +1,31 @@
+.card {
+    background: white;
+    padding: 1rem;
+    border-radius: $radius;
+    box-shadow: $shadow;
+    transition: $transition;
+
+    h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Animation */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,18 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Responsiv */
+@media (max-width: 768px) {
+    .results {
+        grid-template-columns: 1fr;
+    }
+}

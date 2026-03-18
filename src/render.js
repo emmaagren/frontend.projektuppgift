@@ -28,3 +28,5 @@ export function renderAdvice(advice) {
     const el = document.querySelector("#advice");
     el.textContent = advice;
 }
+
+el.classList.add("fade-in");

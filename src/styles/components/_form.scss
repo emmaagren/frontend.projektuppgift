@@ -1,0 +1,25 @@
+form{
+    display: flex;
+    gap: 0.5rem;
+
+    input {
+        flex: 1;
+        padding: 0.7rem;
+        border-radius: $radius;
+        border: 1px solid #333;
+    }
+
+    button {
+        padding: 0.7rem 1rem;
+        border: none;
+        background: $secondary;
+        color: white;
+        border-radius: $radius;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            background: darken($secondary, 10%);
+        }
+    }
+}
