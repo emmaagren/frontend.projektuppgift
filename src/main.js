@@ -15,7 +15,13 @@ import { getRidingAdvice } from './ridingAdvice.js';
  */
 
 function initApp() {
+    
     const form = document.querySelector("#searchForm");
+
+    if (!form) {
+        console.error("Form hittades inte!");
+        return;
+    }
 
     form.addEventListener("submit", handleSearch);
 }
@@ -50,4 +56,4 @@ async function handleSearch(e) {
     
 }
 
-initApp();
+document.addEventListener("DOMContentLoaded", initApp);

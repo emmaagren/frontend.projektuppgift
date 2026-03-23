@@ -29,4 +29,3 @@ export function renderAdvice(advice) {
     el.textContent = advice;
 }
 
-el.classList.add("fade-in");
