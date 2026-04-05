@@ -15,7 +15,7 @@ import { getRidingAdvice } from './ridingAdvice.js';
  */
 
 function initApp() {
-    
+
     const form = document.querySelector("#searchForm");
 
     if (!form) {
@@ -24,6 +24,17 @@ function initApp() {
     }
 
     form.addEventListener("submit", handleSearch);
+
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+        console.log("KLICK FUNKAR");
+        navLinks.classList.toggle("active");
+    });
+}
+
 }
 
 /**
@@ -47,13 +58,13 @@ async function handleSearch(e) {
         initMap(coords.lat, coords.lon);
         renderWeather(weather);
 
-        const advice =getRidingAdvice(weather);
+        const advice = getRidingAdvice(weather);
         renderAdvice(advice);
 
     } catch (error) {
         console.error("Fel:", error);
     }
-    
+
 }
 
-document.addEventListener("DOMContentLoaded", initApp);
+document.addEventListener (initApp);

@@ -1,84 +1,73 @@
 <!doctype html>
 <html lang="sv">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ridvägar & väder</title>
 
-    <!-- Leaflet CSS för kartan -->
-     <link rel="stylesheet"
-     href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ridvägar & väder</title>
 
-  <body>
-    <!-- Header / hero-->
-    <header class="hero">
-      <nav class="navbar">
-        <div class="logo">Ridvägar</div>
-        <button class="hamburger">&#9776;</button>
-        <ul class="nav-links">
-          <li><a href="#home">Hem</a></li>
-          <li><a href="#rides">Uteritter</a></li>
-          <li><a href="#quote">Citat</a></li>
-          <li><a href="gallery">Galleri</a></li>
-        </ul>
-      </nav>
-      <div class="hero-text">
-        <h1>Upptäck ridvägar och väder i din region.</h1>
-        <p>Planera din nästa uteritt med trygghet och stil.</p>
-      </div>
-    </header>
+  <!-- Leaflet CSS för kartan -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
 
-    <!-- Main content -->
-     <main>
-      <section id="home" class="search-section">
-        <form id="searchForm">
-          <input id="searchInput" type="text" placeholder="Sök plats.."/>
-          <button type="submit">Sök</button>
-        </form>
-        <div class="results">
-          <div id="weather" class="card"></div>
-          <div id="advice" class="card"></div>
-        </div>
-        <div id="map"></div>
-      </section>
+<body>
+  <!-- Header / hero-->
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">Ridvägar</div>
 
-      <section id="quote" class="quote-section">
-        <blockquote>
-          "Hästar är inte bara djur, de är speglar av vår själ." - ><cite>Jane Savoie</cite>
-        </blockquote>
-      </section>
+      <button class="hamburger" aria-label="Öppna meny">&#9776;</button>
 
-      <section id="gallery" class="gallery-section">
-        <h2>Galleri</h2>
-        <div class="gallery-grid">
-          <!-- Bilder -->
-        </div>
-      </section>
-     </main>
+      <ul class="nav-links">
+        <li><a href="#home">Hem</a></li>
+        <li><a href="#rides">Uteritter</a></li>
+        <li><a href="#quote">Citat</a></li>
+        <li><a href="gallery">Galleri</a></li>
+      </ul>
+    </nav>
 
-    <div class="container app">
-      <!-- Sökformulär -->
-       <form id="searchForm">
-        <input id="searchInput" type="text" placeholder="Sök plats..." />
-        <button type="submit">Sök</button>
-       </form>
-
-       <!-- Resultat: Väder och ridtips -->
-        <div class="results">
-          <div id="weather" class="card"></div>
-          <div id="advice" class="card"></div>
-        </div>
-
-        <!-- Karta -->
-         <div id="map"></div>
+    <div class="hero-text">
+      <h1>Upptäck ridvägar och väder i din region.</h1>
+      <p>Planera din nästa uteritt med trygghet och stil.</p>
     </div>
+  </header>
 
-    <!-- Leaflet JS -->
-     <script
-     src="https://unpkg.com/leaflet/dist/leaflet.js"
-     defer
-     ></script>
-    
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  <!-- Main content -->
+  <main>
+
+    <section id="home" class="search-section">
+      <form id="searchForm">
+        <input id="searchInput" type="text" placeholder="Sök plats.." />
+        <button type="submit">Sök</button>
+      </form>
+
+      <div class="results">
+        <div id="weather" class="card"></div>
+        <div id="advice" class="card"></div>
+      </div>
+
+      <div id="map"></div>
+    </section>
+
+    <section id="quote" class="quote-section">
+      <blockquote>
+        "Hästar är inte bara djur, de är speglar av vår själ." - ><cite>Jane Savoie</cite>
+      </blockquote>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+      <h2>Galleri</h2>
+      <div class="gallery-grid">
+        <!-- Bilder -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
