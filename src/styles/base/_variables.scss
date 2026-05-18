@@ -1,16 +1,15 @@
-$primary: #6a994e;
-$secondary: #a7c957;
-$primary-color: #6a994e;
-$secondary-color: #a7c957;
-$text-color: #222;
-$bg-color: #f0f0f0;
-$hero-bg: url('/public/images/hero_.webp') center/cover no-repeat;
-$accent: #27ae60;
+$bg-color: #f6f1e8;
+$text-color: #2f241c;
 
-$bg: #f5f7fa;
-$text: #333;
+$primary: #5f6f52;
+$secondary: #b8794f;
+$accent: #d8a85f;
 
-$radius: 12px;
-$shadow: 0 4px 12px rgba(0,0,0,0.1);
+$card-bg: #fffaf3;
+$hero-bg: linear-gradient(
+    rgba(30, 24, 18, 0.55),
+    rgba(30, 24, 18, 0.55)
+),
+url('/public/images/hero_.webp') center/cover no-repeat;
 
 $transition: all 0.3s ease;

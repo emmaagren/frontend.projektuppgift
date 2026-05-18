@@ -7,10 +7,10 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Inter", Arial, sans-serif;
     background: $bg-color;
     color: $text-color;
-    margin: 0;
+    line-height: 1.6;
 }
 
 .hero {
@@ -78,7 +78,7 @@ body {
     }
 }
 
-.search-section, .rides-section, .quote-section, .gallery-section {
+.search-section, .rides-section, .gallery-section {
     padding: 4rem 2rem;
 }
 
@@ -97,4 +97,73 @@ body {
     max-width: 1000px;
     margin: auto;
     padding: 1rem;
+}
+
+.quote-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #f4efe7, #d8c7b0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote-card {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    position: relative;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 3rem 2.5rem;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    animation: fadeUp 0.8s ease;
+}
+
+.quote-mark {
+    font-size: 6rem;
+    line-height: 1;
+    color: #8b5e3c;
+    opacity: 0.4;
+    display: block;
+    margin-bottom: -1rem;
+}
+
+.quote-card blockquote {
+    font-size: clamp(1.7rem, 4vw, 3rem);
+    line-height: 1.25;
+    font-weight: 700;
+    color: #2f241c;
+    margin: 0 0 2rem 0;
+}
+
+.quote-author {
+    margin: 0;
+    font-weight: 700;
+    color: #8b5e3c;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.quote-text {
+    margin: 1.2rem auto 0;
+    max-width: 650px;
+    text-align: center;
+    line-height: 1.8;
+    color: #4a3b31;
+    font-size: 1.05rem;
+    font-style: italic;
+    letter-spacing: 0.3px;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

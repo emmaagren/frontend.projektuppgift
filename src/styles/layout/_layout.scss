@@ -10,12 +10,13 @@
     gap: 1rem;
 }
 
+
 /* Responsiv */
 @media (max-width: 768px) {
     .results {
         grid-template-columns: 1fr;
     }
-    .nav-links {
+    .hero .navbar .nav-links {
         position: absolute;
         top: 70px;
         right: 0;
@@ -37,12 +38,12 @@
         transition: all 0.3s ease;
     }
 
-    .nav-links.active {
+    .hero .navbar .nav-links.active {
         display: flex;
         opacity: 1;
         transform: translateY(0);
     }
-    .hamburger {
+    .hero .navbar .hamburger {
         display: block;
     }
 }

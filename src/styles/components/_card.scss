@@ -1,11 +1,11 @@
 @use "../base/variables" as *;
 
 .card {
-    background: white;
-    padding: 1rem;
-    border-radius: $radius;
-    box-shadow: $shadow;
-    transition: $transition;
+    background: $card-bg;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(47, 36, 28, 0.12);
+    border: 1px solid rgba(95, 111, 82, 0.15);
 
     h2 {
         margin-bottom: 0.5rem;
@@ -17,7 +17,7 @@
 }
 
 /* Animation */
-.fade-in {
+.fade-In {
     animation: fadeIn 0.5s ease-in;
 }
 
