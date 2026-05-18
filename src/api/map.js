@@ -1,3 +1,6 @@
+let map;
+
+
 /**
  * Initierar en Leaflet-karta och placerar en markör.
  * @function initMap
@@ -7,7 +10,11 @@
  */
 
 export function initMap(lat, lon) {
-    const map = L.map("map").setView([lat, lon], 10);
+    if (map) {
+        map.remove();
+    }
+
+    map = L.map("map").setView([lat, lon], 10);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "&copy; OpenStreetMap"

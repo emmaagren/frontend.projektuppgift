@@ -10,7 +10,7 @@
 export function renderWeather(weather) {
     const el = document.querySelector("#weather");
 
-    el.innerHTML =`
+    el.innerHTML = `
     <p>Temperatur: ${weather.temperature}°C</p>
     <p>Vind: ${weather.windspeed} m/s</p>
     `;
@@ -29,3 +29,28 @@ export function renderAdvice(advice) {
     el.textContent = advice;
 }
 
+/**
+ * Renderear ridvägar i DOM.
+ * @function renderRoutes
+ * @param {Array} routes - lista med ridvägar från Overpass API.
+ * @returns {void}
+ */
+
+export function renderRoutes(routes) {
+    const el = document.querySelector("#routes");
+
+    if (!routes.length) {
+        el.innerHTML = "<h2>Ridvägar nära dig</h2><p>Inga ridvägar hittades i närheten</p>";
+        return;
+    }
+
+    el.innerHTML = `
+    <h2>Ridvägar nära dig</h2>
+    <p>${routes.length} möjliga ridvägar/stigar hittades inom 5 km.</p>
+    <ul>
+    ${routes.slice(0, 5).map(route => `
+        <li>${route.tags?.name || "Namnlös ridväg/stig"}</li>
+        `).join("")}
+        </ul>
+    `;
+}

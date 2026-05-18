@@ -3,10 +3,12 @@ import './styles/main.scss'
 import { getCoordinates } from './api/geo.js';
 import { fetchWeather } from './api/weather.js';
 import { initMap } from './api/map.js';
+import { fetchRidingRoutes } from './api/ridingRoutes.js';
 
-import { renderAdvice, renderWeather } from './render.js';
+import { renderAdvice, renderWeather, renderRoutes } from './render.js';
 
 import { getRidingAdvice } from './ridingAdvice.js';
+
 
 /**
  * Initierar applikationen och hanterar användarinteraktion.
@@ -54,6 +56,8 @@ async function handleSearch(e) {
     try {
         const coords = await getCoordinates(place);
         const weather = await fetchWeather(coords.lat, coords.lon);
+        const routes = await fetchRidingRoutes(coords.lat, coords.lon);
+        renderRoutes(routes);
 
         initMap(coords.lat, coords.lon);
         renderWeather(weather);
@@ -63,8 +67,9 @@ async function handleSearch(e) {
 
     } catch (error) {
         console.error("Fel:", error);
+        renderAdvice("Platsen kunde inte hittas. Kontrollera stavningen och försök igen.");
     }
 
 }
 
-document.addEventListener (initApp);
+document.addEventListener ("DOMContentLoaded", initApp);
