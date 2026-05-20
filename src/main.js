@@ -10,7 +10,7 @@ import { renderAdvice, renderWeather, renderRoutes } from './render.js';
 import { getRidingAdvice } from './ridingAdvice.js';
 
 
-/**
+/*
  * Initierar applikationen och hanterar användarinteraktion.
  * @function initApp
  * @returns {void}
@@ -59,8 +59,9 @@ async function handleSearch(e) {
         const routes = await fetchRidingRoutes(coords.lat, coords.lon);
         renderRoutes(routes);
 
-        initMap(coords.lat, coords.lon);
+        initMap(coords.lat, coords.lon, routes);
         renderWeather(weather);
+        renderRoutes(routes);
 
         const advice = getRidingAdvice(weather);
         renderAdvice(advice);

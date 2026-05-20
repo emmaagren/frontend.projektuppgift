@@ -16,7 +16,7 @@ export async function fetchRidingRoutes(lat, lon) {
     way["horse"="designated"](around:5000,${lat},${lon});
     relation["route"="horse"](around:5000,${lat},${lon});
     );
-    out tags center 10;
+    out tags geom;
     `;
 
     const url = "https://overpass-api.de/api/interpreter";
