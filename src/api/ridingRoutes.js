@@ -11,10 +11,10 @@ export async function fetchRidingRoutes(lat, lon) {
     const query = `
     [out:json][timeout:25];
     (
-    way["highway"="bridleway"](around:5000,${lat},${lon});
-    way["horse"="yes"](around:5000,${lat},${lon});
-    way["horse"="designated"](around:5000,${lat},${lon});
-    relation["route"="horse"](around:5000,${lat},${lon});
+    way["highway"="bridleway"](around:2000,${lat},${lon});
+    way["highway"="path"](around:2000,${lat},${lon});
+    way["highway"="track"](around:2000,${lat},${lon});
+    relation["route"="horse"](around:2000,${lat},${lon});
     );
     out tags geom;
     `;

@@ -40,13 +40,13 @@ export function renderRoutes(routes) {
     const el = document.querySelector("#routes");
 
     if (!routes.length) {
-        el.innerHTML = "<h2>Ridvägar nära dig</h2><p>Inga ridvägar hittades i närheten</p>";
+        el.innerHTML = "<h2>Möjliga ridvägar nära dig</h2><p>Inga ridvägar hittades i närheten</p>";
         return;
     }
 
     el.innerHTML = `
-    <h2>Ridvägar nära dig</h2>
-    <p>${routes.length} möjliga ridvägar/stigar hittades inom 5 km.</p>
+    <h2>Möjliga ridvägar nära dig</h2>
+    <p>${routes.length} stigar, leder eller skogsvägar hittades inom 2 km.</p>
     <ul>
     ${routes.slice(0, 5).map(route => `
         <li>${route.tags?.name || "Namnlös ridväg/stig"}</li>
