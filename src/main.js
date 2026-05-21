@@ -20,6 +20,8 @@ function initApp() {
 
     const form = document.querySelector("#searchForm");
 
+    renderSearchHistory();
+
     if (!form) {
         console.error("Form hittades inte!");
         return;
@@ -51,7 +53,9 @@ async function handleSearch(e) {
     e.preventDefault();
 
     const input = document.querySelector("#searchInput");
-    const place = input.value;
+    const place = input.value.trim();
+
+    saveSearch(place);
 
     try {
         const coords = await getCoordinates(place);
@@ -72,5 +76,72 @@ async function handleSearch(e) {
     }
 
 }
+
+/**
+ * Sparar sökning i localStorage.
+ * @function saveSearch
+ * @param {string} place - Sökplats
+ * @returns {void}
+ */
+
+function saveSearch(place) {
+
+    let searches = JSON.parse(localStorage.getItem("searches")) || [];
+
+    if (!searches.includes(place)) {
+        searches.unshift(place);
+    }
+
+    searches = searches.slice(0, 5);
+
+    localStorage.setItem("searches", JSON.stringify(searches));
+
+    renderSearchHistory();
+}
+
+/**
+ * Renderar tidigare sökningar.
+ * @function renderSearchHistory
+ * @returns {void}
+ */
+
+function renderSearchHistory() {
+
+    const container = document.querySelector("#searchHistory");
+
+    if (!container) return;
+
+    const searches = JSON.parse(localStorage.getItem("searches")) || [];
+
+    if (!searches.length) {
+        container.innerHTML = "";
+        return;
+    }
+
+    container.innerHTML = `
+    <h2>Tidigare sökningar</h2>
+    <ul class="history-list">
+    ${searches.map(place => `
+        <li>
+            <button class="history-btn" data-place="${place}">
+                ${place}
+            </button>
+        </li>
+        `).join("")}
+        </ul>
+        `;
+
+        document.querySelectorAll(".history-btn").forEach(button => {
+            button.addEventListener("click", () => {
+
+                const input = document.querySelector("#searchInput");
+
+                input.value = button.dataset.place;
+
+                document.querySelector("#searchForm")
+                .dispatchEvent(new Event("submit"));
+            });
+        });
+    }
 
 document.addEventListener ("DOMContentLoaded", initApp);
