@@ -54,3 +54,53 @@ export function renderRoutes(routes) {
         </ul>
     `;
 }
+
+/**
+ * Renderar tomt standardinnehåll innan användaren sökt.
+ * @function renderEmptyCards
+ * @returns {void}
+ */
+
+export function renderEmptyCards() {
+
+    document.querySelector("#weather").innerHTML = `
+    <div class="empty-card">
+    <span class="empty-icon">🌤️</span>
+    <h3>Väderinformation</h3>
+    <p>
+    Här visas temperatur och vindförhållanden för ditt valda område.
+    </p>
+    </div>
+    `;
+
+    document.querySelector("#advice").innerHTML = `
+    <div class="empty-card">
+    <span class="empty-icon">🐎</span>
+    <h3>Ridrekommendation</h3>
+    <p>
+    Få tips om bästa tid och förhållanden för din nästa uteritt.
+    </p>
+    </div>
+    `;
+
+    document.querySelector("#searchHistory").innerHTML = `
+    <div class="empty-card">
+    <span class="empty-icon">📍</span>
+    <h3>Tidigare sökningar</h3>
+    <p>
+    Dina senaste sökningar sparas här för snabb åtkomst.
+    </p>
+    </div>
+    `;
+
+    document.querySelector("#routes").innerHTML = `
+    <div class="empty-card">
+    <span class="empty-icon">🗺️</span>
+    <h3>Ridvägar och leder</h3>
+    <p>
+    Upptäck stigar, skogsvägar och möjliga ridleder nära din valda plats.
+    </p>
+    </div>
+    `;
+
+}

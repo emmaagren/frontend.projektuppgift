@@ -5,7 +5,7 @@ import { fetchWeather } from './api/weather.js';
 import { initMap } from './api/map.js';
 import { fetchRidingRoutes } from './api/ridingRoutes.js';
 
-import { renderAdvice, renderWeather, renderRoutes } from './render.js';
+import { renderAdvice, renderWeather, renderRoutes, renderEmptyCards } from './render.js';
 
 import { getRidingAdvice } from './ridingAdvice.js';
 
@@ -19,7 +19,8 @@ import { getRidingAdvice } from './ridingAdvice.js';
 function initApp() {
 
     const form = document.querySelector("#searchForm");
-
+    
+    renderEmptyCards();
     renderSearchHistory();
 
     if (!form) {
