@@ -99,6 +99,18 @@ body {
     gap: 1rem;
 }
 
+.gallery-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 18px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
 .container {
     max-width: 1000px;
     margin: auto;
@@ -182,6 +194,8 @@ body {
     position: relative;
     overflow: hidden;
 }
+
+
 
 @keyframes fadeUp {
     from {
