@@ -19,7 +19,7 @@ import { getRidingAdvice } from './ridingAdvice.js';
 function initApp() {
 
     const form = document.querySelector("#searchForm");
-    
+
     renderEmptyCards();
     renderSearchHistory();
 
@@ -34,11 +34,11 @@ function initApp() {
     const navLinks = document.querySelector(".nav-links");
 
     if (hamburger && navLinks) {
-    hamburger.addEventListener("click", () => {
-        console.log("KLICK FUNKAR");
-        navLinks.classList.toggle("active");
-    });
-}
+        hamburger.addEventListener("click", () => {
+            console.log("KLICK FUNKAR");
+            navLinks.classList.toggle("active");
+        });
+    }
 
 }
 
@@ -62,7 +62,6 @@ async function handleSearch(e) {
         const coords = await getCoordinates(place);
         const weather = await fetchWeather(coords.lat, coords.lon);
         const routes = await fetchRidingRoutes(coords.lat, coords.lon);
-        renderRoutes(routes);
 
         initMap(coords.lat, coords.lon, routes);
         renderWeather(weather);
@@ -115,7 +114,14 @@ function renderSearchHistory() {
     const searches = JSON.parse(localStorage.getItem("searches")) || [];
 
     if (!searches.length) {
-        container.innerHTML = "";
+        container.innerHTML = `
+        <div class="empty-card">
+        <span class="empty-item">📍</span>
+        <h3>Tidigare sökningar</h3>
+        <p>
+        Dina senaste sökningar sparas här för snabb åtkomst.</p>
+        </div>
+        `;
         return;
     }
 
@@ -130,19 +136,43 @@ function renderSearchHistory() {
         </li>
         `).join("")}
         </ul>
+
+        <button id="clearHistoryBtn" class="clear-btn">
+        Rensa Historik
+        </button>
         `;
 
-        document.querySelectorAll(".history-btn").forEach(button => {
-            button.addEventListener("click", () => {
+    document.querySelectorAll(".history-btn").forEach(button => {
+        button.addEventListener("click", () => {
 
-                const input = document.querySelector("#searchInput");
+            const input = document.querySelector("#searchInput");
 
-                input.value = button.dataset.place;
+            input.value = button.dataset.place;
 
-                document.querySelector("#searchForm")
+            document.querySelector("#searchForm")
                 .dispatchEvent(new Event("submit"));
-            });
         });
+    });
+
+    const clearBtn = document.querySelector("#clearHistoryBtn");
+
+    if (clearBtn) {
+        clearBtn.addEventListener("click", clearSearchHistory);
     }
 
-document.addEventListener ("DOMContentLoaded", initApp);
+}
+
+/**
+ * Raderar sparad sökhistorik från localStorage.
+ * @function clearSearchHistory
+ * @returns {void}
+ */
+
+function clearSearchHistory() {
+
+    localStorage.removeItem("searches");
+
+    renderSearchHistory();
+}
+
+document.addEventListener("DOMContentLoaded", initApp);

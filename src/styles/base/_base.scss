@@ -162,6 +162,27 @@ body {
     letter-spacing: 0.3px;
 }
 
+.horse-runner {
+    position: absolute;
+    bottom: 10px;
+    left: -100px;
+    z-index: 2;
+    animation: runAcross 20s linear infinite;
+    opacity: 1;
+}
+
+.horse-runner img {
+    width: 70px;
+    height: auto;
+    display: block;
+    transform: scaleX(-1);
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -171,5 +192,15 @@ body {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes runAcross {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(100vw + 220px));
     }
 }

@@ -40,7 +40,11 @@ export function renderRoutes(routes) {
     const el = document.querySelector("#routes");
 
     if (!routes.length) {
-        el.innerHTML = "<h2>Möjliga ridvägar nära dig</h2><p>Inga ridvägar hittades i närheten</p>";
+        `
+        el.innerHTML = 
+        <h2>Möjliga ridvägar nära dig</h2>
+        <p>Inga ridvägar hittades i närheten</p>
+        `;
         return;
     }
 
@@ -79,16 +83,6 @@ export function renderEmptyCards() {
     <h3>Ridrekommendation</h3>
     <p>
     Få tips om bästa tid och förhållanden för din nästa uteritt.
-    </p>
-    </div>
-    `;
-
-    document.querySelector("#searchHistory").innerHTML = `
-    <div class="empty-card">
-    <span class="empty-icon">📍</span>
-    <h3>Tidigare sökningar</h3>
-    <p>
-    Dina senaste sökningar sparas här för snabb åtkomst.
     </p>
     </div>
     `;
