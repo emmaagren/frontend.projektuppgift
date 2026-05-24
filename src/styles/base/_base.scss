@@ -149,14 +149,47 @@ body {
 
 .gallery-grid img {
     width: 100%;
-    height: 260px;
-    object-fit: cover;
+    height: auto;
     border-radius: 18px;
     transition: transform 0.3s ease;
 }
 
 .gallery-grid img:hover {
     transform: scale(1.03);
+}
+
+.gallery-feature {
+    position: relative;
+
+    margin-top: 2rem;
+
+    overflow: hidden;
+    border-radius: 28px;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-feature img {
+    width: 100%;
+    max-height: auto;
+
+    display: block;
+}
+
+.gallery-overlay {
+    position: absolute;
+
+    left: 2rem;
+    bottom: 2rem;
+
+    color: white;
+
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.55);
+}
+
+.gallery-overlay h3 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
 }
 
 .container {
