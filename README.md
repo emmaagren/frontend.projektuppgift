@@ -60,4 +60,10 @@ Används för att:
 - Versionshantering med Git/GitHub
 
 
+## För att klona projektet
+https://github.com/emmaagren/frontend.projektuppgift.git
 
+
+###Skapad av 
+Emma Ågren
+Frontendbaserad webbutveckling - Mittuniversitetet.
