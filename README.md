@@ -1,3 +1,3 @@
 # frontend.projektuppgift
 
-Projektet ligger i main.
+Projektet ligger i master.
