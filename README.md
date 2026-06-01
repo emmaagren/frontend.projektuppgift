@@ -63,6 +63,13 @@ Används för att:
 ## För att klona projektet
 https://github.com/emmaagren/frontend.projektuppgift.git
 
+## Länk till publicerat projekt
+https://uterittsguiden.netlify.app/
+
+## Projektrapport
+[Projekt.frontend.pdf](https://github.com/user-attachments/files/28470432/Projekt.frontend.pdf)
+
+
 
 ###Skapad av 
 Emma Ågren
